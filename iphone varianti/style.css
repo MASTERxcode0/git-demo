@@ -2,6 +2,7 @@
   margin: 0 auto;
   padding: 0 auto;
 }
+
 .container {
   max-width: 767px;
   display: flex;
@@ -9,6 +10,7 @@
   justify-content: space-around;
   height: 800px;
 }
+
 .main {
   display: flex;
   flex-direction: column;
@@ -16,6 +18,7 @@
   align-items: center;
   gap: 20px;
 }
+
 h3 {
   font-family: SF Pro;
   font-size: 19px;
@@ -24,17 +27,19 @@ h3 {
   letter-spacing: -0.44999998807907104px;
   text-align: center;
 }
+
 .input {
   display: flex;
   gap: 16px;
 }
+
 input {
-  width: 40px;
-  height: 44px;
-  gap: 0px;
-  border-radius: 12px;
+  width: 1px;
+  height: 1px;
+  border-radius: 50%;
   border: 2.4px solid #00000026;
 }
+
 .number {
   display: flex;
   flex-wrap: wrap;
@@ -43,12 +48,13 @@ input {
   gap: 12px;
   opacity: 0px;
 }
+
 button {
-  width: 116px;
-  height: 56px;
+  width: 50px;
+  height: 50px;
   padding: 16px;
   gap: 12px;
-  border-radius: 16px;
+  border-radius: 50%;
   background: #f4f4f7;
   border: none;
   font-family: SF Pro;
@@ -58,6 +64,7 @@ button {
   letter-spacing: 0.10000000149011612px;
   text-align: center;
 }
+
 .img {
   background-color: transparent;
 }
