@@ -1,11 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
     <title>Document</title>
-</head>
-<body>
-    hellov world  
-</body>
+  </head>
+  <body>
+    <div class="container">
+      <div></div>
+      <div class="main">
+        <h3>App Locked</h3>
+        <div class="input" id="inputs">
+          <input type="text" maxlength="1" />
+          <input type="text" maxlength="1" />
+          <input type="text" maxlength="1" />
+          <input type="text" maxlength="1" />
+        </div>
+      </div>
+      <div class="number" id="btn">
+        <div>
+          <button>1</button>
+          <button>2</button>
+          <button>3</button>
+        </div>
+        <div>
+          <button>4</button>
+          <button>5</button>
+          <button>6</button>
+        </div>
+        <div>
+          <button>7</button>
+          <button>8</button>
+          <button>9</button>
+        </div>
+        <div>
+          <button class="img"></button>
+          <button>0</button>
+          <button><img src="Vector.png" alt="" /></button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const inputs = document.querySelectorAll("#inputs input");
+      const buttons = document.querySelectorAll("#btn button");
+      let currentInput = 0;
+
+      inputs.forEach((input) => {
+        input.addEventListener("input", function (e) {
+          const val = e.target.value;
+
+          if (!isNaN(val) && val !== "") {
+            currentInput = Array.from(inputs).indexOf(e.target);
+            if (currentInput < inputs.length - 1) {
+              inputs[currentInput + 1].focus();
+            }
+          }
+        });
+      });
+
+      buttons.forEach((button) => {
+        button.addEventListener("click", function () {
+          const value = button.textContent.trim();
+
+          if (!isNaN(value) && value !== "") {
+            if (currentInput < inputs.length) {
+              inputs[currentInput].value = value;
+              console.log("Kiritilgan raqam:", value);
+
+              if (currentInput < inputs.length - 1) {
+                inputs[currentInput + 1].focus();
+              }
+              currentInput++;
+            }
+          }
+        });
+      });
+    </script>
+  </body>
 </html>
